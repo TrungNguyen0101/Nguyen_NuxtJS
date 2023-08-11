@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 20px;
+}
+.header-icon {
+  background-image: linear-gradient(to right, #2c82e2, #8759e0);
+}
+
+.fullWidthPage-hover {
+  opacity: 0;
+  visibility: hidden;
+}
+.fullWidthPage:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background-color: transparent;
+  bottom: -80%;
+  left: 0;
+}
+.fullWidthPage:hover {
+  .fullWidthPage-hover {
+    opacity: 1;
+    visibility: inherit;
+  }
+}
+
+.icon-hover {
+  &:hover path {
+    fill: rgb(43, 43, 243); /* Màu fill khi hover */
+  }
+}
+
+.tagBorder::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: rgb(43, 43, 243);
+  top: -3px;
+  z-index: -99;
+}
+.text-desc {
+  display: -webkit-box;
+  line-height: 1.3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
